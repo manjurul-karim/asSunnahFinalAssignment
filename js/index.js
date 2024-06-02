@@ -171,7 +171,7 @@ document
       if (isNaN(sideInput) || sideInput <= 0) {
         alert("invalid input value");
       }
-      const squareAreaCalculation = 6 * sideInput * sideInput;
+      const squareAreaCalculation = sideInput * sideInput;
 
       displayCalculation(name, squareAreaCalculation,unit);
     }
