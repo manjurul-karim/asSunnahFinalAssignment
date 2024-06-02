@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment- 05</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <!--!  Calculation Sewction -->
+      <section class="calculation">
+        <!-- ! Basic Calculator -->
+        <div class="calculator">
+          <div class="display" id="result">0</div>
+          <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="setOperation('remainder')">rem</button>
+            <button onclick="setOperation('percentage')">%</button>
+            <button onclick="setOperation('divide')">/</button>
+
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="setOperation('multiply')">*</button>
+
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="setOperation('subtract')">-</button>
+
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="setOperation('add')">+</button>
+
+            <button onclick="appendNumber('.')">.</button>
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendNumber('00')">00</button>
+            <button onclick="calculateResult()">=</button>
+          </div>
+        </div>
+
+        <!-- ! Interrest Calculation -->
+
+        <div class="interest-calculator">
+          <h1>Interest Calculator</h1>
+          <label for="principal">Principal Amount:</label>
+          <input
+            type="number"
+            id="principal"
+            placeholder="Enter principal amount"
+          /><br /><br />
+          <label for="rate">Interest Rate (%):</label>
+          <input
+            type="number"
+            id="rate"
+            placeholder="Enter interest rate"
+          /><br /><br />
+          <label for="time">Time (years):</label>
+          <input
+            type="number"
+            id="time"
+            placeholder="Enter time in years"
+          /><br /><br />
+          <button onclick="calculateInterest()">Calculate Interest</button>
+          <div id="resultField">
+            <p>Interest:</p>
+            <p id="interestResult"></p>
+          </div>
+        </div>
+        <!--  -->
+        <!-- <select id="unit-select" style="display: none">
+          <option value="cm²">cm²</option>
+          <option value="ft²">ft²</option>
+          <option value="in²">in²</option>
+          <option value="cm³">cm³</option>
+        </select> -->
+        <!--  -->
+
+        <!--  ! fahrenheit to Celsius and Celsius to Fahrenheit calculator-->
+        <div id="Fahrenheit-celsius-card" class="card">
+          <figure>
+            <img src="images/celsius-fahrenheit.jpg" alt="" class="" />
+          </figure>
+          <div>
+            <h4 id="fahrenheit-celsius">Celsius</h4>
+          </div>
+          <div class="fahrenheit">
+            <div class="input-box">
+              <input type="number" placeholder="fahrenheit" id="Fahrenheit" />
+            </div>
+
+            <div class="card-actions">
+              <button id="f-to-c-calculate-btn">F to C</button>
+            </div>
+          </div>
+          <div>
+            <h4 id="celsius-fahrenheit">Farhenhit</h4>
+          </div>
+          <div class="Celsius">
+            <div class="input-box">
+              <input type="number" placeholder="Celsius" id="Celsius" />
+            </div>
+
+            <div class="card-actions">
+              <button id="c-to-f-calculate-btn">C to F</button>
+            </div>
+          </div>
+        </div>
+        <!--  ! circle card -->
+        <div id="circle-card" class="card">
+          <figure>
+            <img src="images/circle.png" alt="" class="" />
+          </figure>
+          <div>
+            <h2 class="card-title" id="circle-shape">Circle</h2>
+            <p>Area (A) = &pi;*r*r</p>
+          </div>
+          <div class="input-box">
+            <span> &pi;</span> X
+            <input type="number" placeholder="r" id="circle-radius-input" />
+            <p>cm</p>
+          </div>
+
+          <div class="card-actions">
+            <p id="cmSquare" style="display: none">cm²</p>
+            <button id="circle-calculate-btn">Calculate</button>
+          </div>
+        </div>
+        <!-- !Rectangle Card -->
+        <div id="rectangle-card" class="card">
+          <figure>
+            <img src="images/rectangle.png" alt="" class="" />
+          </figure>
+          <div>
+            <h2 class="card-title" id="rectangle-shape">Rectangle</h2>
+            <p>Area (A) = l x w</p>
+            <div class="input-box">
+              <input
+                type="number"
+                placeholder="l"
+                id="rectangle-length-input"
+              />
+              <p>cm</p>
+              <input type="number" placeholder="w" id="rectangle-width-input" />
+              <p>cm</p>
+            </div>
+
+            <div class="card-actions">
+              <button id="rectangle-calculate-btn">Calculate</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- !Square Card -->
+        <div id="square-card" class="card">
+          <figure>
+            <img src="images/square.png" alt="" class="" />
+          </figure>
+          <div>
+            <h2 class="card-title" id="square-shape">square</h2>
+            <p>Area (A) = a <sup>2</sup></p>
+            <div class="input-box">
+              <input type="number" placeholder="a" id="square-side-input" />
+              <p>cm</p>
+            </div>
+
+            <div class="card-actions">
+              <button id="square-calculate-btn">Calculate</button>
+            </div>
+          </div>
+        </div>
+        <!-- ! triangle card  -->
+        <div id="triangle-card" class="card">
+          <figure>
+            <img src="images/triangle.png" alt="Triangle Image" class="" />
+          </figure>
+          <div>
+            <h2 class="card-title" id="triangle-shape">Triangle</h2>
+            <p>Area (A) = 0.5 x b x h</p>
+          </div>
+          <div class="input-box">
+            <input type="number" placeholder="b" id="triangle-base-input" />
+            <p>cm</p>
+            <input type="number" placeholder="h" id="triangle-height-input" />
+            <p>cm</p>
+          </div>
+          <div class="card-actions">
+            <button id="triangle-calculate-btn">Calculate</button>
+          </div>
+        </div>
+
+        <!-- !   Parallelogram Card  -->
+        <div class="card">
+          <figure>
+            <img src="images/parallelogram.png" alt="" class="" />
+          </figure>
+          <div>
+            <h2 class="card-title" id="parallelogram-shape">Parallelogram</h2>
+            <p>Area (A) =b x h</p>
+            <div class="input-box">
+              <input
+                type="number"
+                placeholder="b"
+                id="parallelogram-base-input"
+              />
+              <p>cm</p>
+              <input
+                type="number"
+                placeholder="h"
+                id="parallelogram-height-input"
+              />
+              <p>cm</p>
+            </div>
+
+            <div class="card-actions">
+              <button id="parallelogram-calculate-btn">Calculate</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ! Rhombos Card  -->
+        <div class="card">
+          <figure>
+            <img src="images/rhombus.png" alt="" class="" />
+          </figure>
+          <div>
+            <h2 class="card-title" id="rhombus-shape">Rhombus</h2>
+            <p>Area (A) = 0.5 x d<sub>1 </sub> x d<sub>2</sub></p>
+            <div class="input-box">
+              <input
+                type="number"
+                placeholder="d1"
+                id="rhombus-diagonal1-input"
+              />
+              <p>cm</p>
+              <input
+                type="number"
+                placeholder="d2"
+                id="rhombus-diagonal2-input"
+              />
+              <p>cm</p>
+            </div>
+
+            <div class="card-actions">
+              <button id="rhombus-calculate-btn">Calculate</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- !Trapezoid Card -->
+        <div id="trapezoid-card" class="card">
+          <figure>
+            <img src="images/Trapezoid.png" alt="" class="" />
+          </figure>
+          <div>
+            <h2 class="card-title" id="trapezoid-shape">Trapezoid</h2>
+            <p>Area (A) = 0.5 * (a+b) *h</p>
+            <div class="input-box">
+              <input type="number" placeholder="a" id="trapezoid-base1-input" />
+              <p>cm</p>
+              <input
+                type="number"
+                placeholder="b   "
+                id="trapezoid-base2-input"
+              />
+              <input
+                type="number"
+                placeholder="h  "
+                id="trapezoid-height-input"
+              />
+              <p>cm</p>
+            </div>
+
+            <div class="card-actions">
+              <button id="trapezoid-calculate-btn">Calculate</button>
+            </div>
+          </div>
+        </div>
+        <!-- ! Ellipse Card  -->
+        <div class="card">
+          <figure>
+            <img src="images/ellipse.png" alt="" class="" />
+          </figure>
+          <div>
+            <h2 class="card-title" id="ellipse-shape">Ellipse</h2>
+            <p>Area (A) = &pi;ab</p>
+            <div class="input-box">
+              <input type="number" placeholder="a" id="ellipse-aAxis-input" />
+              <p>cm</p>
+              <input type="number" placeholder="b  " id="ellipse-bAxis-input" />
+              <p>cm</p>
+            </div>
+            <div class="card-actions">
+              <button id="ellipse-calculate-btn">Calculate</button>
+            </div>
+          </div>
+        </div>
+        <!-- !cube Card -->
+        <div id="cube-card" class="card">
+          <figure>
+            <img src="images/cube.png" alt="" class="" />
+          </figure>
+          <div>
+            <h2 class="card-title" id="cube-shape">Cube</h2>
+            <p>Area (A) = 6*a*a</p>
+            <div class="input-box">
+              <input type="number" placeholder="a" id="cube-edge-input" />
+              <p>cm</p>
+            </div>
+
+            <div class="card-actions">
+              <p id="unit-select" style="display: none">cm²</p>
+
+              <button id="cube-calculate-btn">Calculate</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--! display Calculation section -->
+      <section class="calculation-display">
+        <div>
+          <h2>Area Calculation</h2>
+          <div>
+            <table class="table">
+              <!-- t-head -->
+              <thead></thead>
+              <!-- t-body -->
+              <tbody id="table-container"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- js Script -->
+    <script src="js/index.js"></script>
+  </body>
+</html>

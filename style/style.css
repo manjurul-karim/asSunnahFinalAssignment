@@ -1,0 +1,153 @@
+main {
+  max-width: 1280px;
+  display: flex;
+  gap: 16px;
+  margin: 16px;
+}
+/* ! Calculator part satart */
+.calculator {
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 350px;
+}
+.display {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 93%;
+  text-align: right;
+  font-size: 20px;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.buttons button {
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+}
+.equal-button {
+  grid-row: 2;
+}
+.buttons button:active {
+  background-color: #ddd;
+  color: #007bff;
+}
+
+/*  ! Calculator part end */
+
+/* ! Interest part Start */
+.interest-calculator {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 370px;
+}
+
+.interest-calculator h1 {
+  margin-bottom: 5px;
+}
+
+.interest-calculator label {
+  display: block;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.interest-calculator input {
+  width: calc(100% - 20px);
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.interest-calculator button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.interest-calculator button:hover {
+  background-color: #0056b3;
+}
+
+.interest-calculator p {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* ! Interest part end */
+.calculation {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  height: 350px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+section figure img {
+  width: 180px;
+  height: 150px;
+}
+
+.input-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.input-box input {
+  width: 80px;
+  height: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 35px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calculation-display {
+  width: 300px;
+  margin-left: 32px;
+}
+
+.fahrenheit,
+.Celsius {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+}
